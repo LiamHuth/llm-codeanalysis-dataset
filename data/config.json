@@ -1,4 +1,12 @@
 {
-    "formatted_file_name": "training_file.jsonl",
-    "prompt_format_path": "./data/prompts.json"
+    "formatted_file_path": "./data/formatted/training.jsonl",
+    "prompt_format_path": "./data/prompts.json",
+    "source_directory_input": "./data/source/sqlInjection/input",
+    "source_directory_output": "./data/source/sqlInjection/output",
+    "vulnerabilities": {
+        "None": 0,
+        "SQL Injection": 1,
+        "XSS": 2,
+        "Command Injection": 3
+    }
 }
