@@ -163,16 +163,22 @@ def main():
 
     # ----- train model -----
 
-    # get key
+    # get user specific parameters from environment
     key = os.environ.get('OPENAI_API_KEY', None)
+    org_id = os.environ.get('OPENAI_ORGANIZATION_KEY', None)
+
     if (key is None):
         print("API Key not defined in your environment", file=sys.stderr)
         sys.exit(1)
 
-    # open connection
-    client = openai.OpenAI(
-        api_key = key
-    )
+    params = {'api_key': key}
+
+    if (org_id is not None):
+        params['organization'] = org_id
+    else:
+        print("Note: no organization id associated with this model")
+
+    client = openai.OpenAI(**params)
 
     # test
     t = input("Q: ")
