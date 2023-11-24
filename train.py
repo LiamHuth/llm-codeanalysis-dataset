@@ -3,9 +3,11 @@ import tiktoken
 from collections import defaultdict
 import sys
 import argparse
+import openai
+import os
 
 """
-This script will validate the input dataset and estimate the training cost
+This script will validate the input dataset, estimate the training cost, and train the model if desired
 
 Usage:
 python3 validate_data.py relative_path_to_dataset.jsonl
@@ -123,6 +125,8 @@ def check_tokens(dataset):
 
 def main():
 
+    # ----- validate data -----
+
     # get filename and parameters
     dataset = parse_args()
 
@@ -130,22 +134,56 @@ def main():
     err = validate_data(dataset)
     
     if err:
-        print("Found errors in data:")
+        print("\nFound errors in data:")
         for k, v in err.items():
             print(f"{k}: {v}", file=sys.stderr)
         sys.exit(1)
     else:
-        print("Dataset Validated")
+        print("\nDataset Validated")
 
     # calculate token count, print message if token count too high for any individual datapoint
     token_count = check_tokens(dataset)
 
     # print cost estimate
-    print("\n--- Cost Estimate ---")
-    print("# tokens: ", token_count)
-    print("# epochs: ", num_epochs)
-    print(f"cost:      ${base_cost: .3f} / 1k tokens")
-    print(f"Estimated Training Cost: ${(token_count/1000) * base_cost * num_epochs: .3f} USD\n")
+    print("\n--------------- Cost Estimate ---------------")
+    print("tokens:                 ", token_count)
+    print("epochs:                 ", num_epochs)
+    print(f"cost:                    ${base_cost: .3f} / 1k tokens")
+    print(f"estimated training cost: ${(token_count/1000) * base_cost * num_epochs: .3f} USD\n")
+
+    # ask to train to model
+    res = input("Proceed to training? (y/n): ")
+    if (res.lower()[0] != "y"):
+        print("exiting without training...\n")
+        sys.exit(0)
+
+    # ----- train model -----
+
+    # get key
+    key = os.environ.get('OPENAI_API_KEY', None)
+    if (key is None):
+        print("API Key not defined in your environment", file=sys.stderr)
+        sys.exit(1)
+
+    # open connection
+    client = openai.OpenAI(
+        api_key = key
+    )
+
+    # test
+    t = input("Q: ")
+    chat_completion = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": t,
+        }
+    ],
+    model="gpt-3.5-turbo",
+    )
+
+    choice = chat_completion.choices[0]
+    print(choice.message.content)
 
 
 if __name__ == "__main__":
