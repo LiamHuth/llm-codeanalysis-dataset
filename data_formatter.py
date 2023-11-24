@@ -54,7 +54,7 @@ def add_to_formatted_file(data):
         formatted_file.write(json.dumps(data))
         formatted_file.write('\n')
 
-def main():
+def format():
     python_files, output_files = init_source_files()
     init_formatted_file()
 
@@ -82,6 +82,3 @@ def main():
             print(f"No matching pair found for {py_file}")
 
         add_to_formatted_file(prompt_format_data)
-
-if __name__ == "__main__":
-    main()
