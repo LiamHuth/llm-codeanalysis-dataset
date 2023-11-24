@@ -141,6 +141,10 @@ def main():
     else:
         print("\nDataset Validated")
 
+    if (len(dataset) < 10):
+        print("WARNING: Dataset must contain at least 10 items, currently has:", len(dataset), file=sys.stderr)
+
+
     # calculate token count, print message if token count too high for any individual datapoint
     token_count = check_tokens(dataset)
 
