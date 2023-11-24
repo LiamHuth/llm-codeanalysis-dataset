@@ -1,12 +1,18 @@
 import os
 import json
+import sys
 
-# Replace with the actual path to the directory containing your files
-source_directory_input = './data/source/sqlInjection/input'
-source_directory_output = './data/source/sqlInjection/output'
+def init_config():
+    global config_data, formatted_file_path, prompt_format_path, source_directory_input, source_directory_output, vulnerabilities
 
-formatted_file_path = "./data/formatted/training.jsonl"
-prompt_format_path = "./data/prompts.json"
+    with open("./data/config.json", 'r') as config:
+        config_data = json.load(config)
+        formatted_file_path = config_data["formatted_file_path"]
+        prompt_format_path = config_data["prompt_format_path"]
+        source_directory_input = config_data["source_directory_input"]
+        source_directory_output = config_data["source_directory_output"]
+        vulnerabilities = config_data["vulnerabilities"]
+
 
 def init_source_files():
     # Lists to hold the matched file names
@@ -82,3 +88,10 @@ def format():
             print(f"No matching pair found for {py_file}")
 
         add_to_formatted_file(prompt_format_data)
+
+def main():
+    init_config()
+    format()
+
+if __name__ == "__main__":
+    main()
