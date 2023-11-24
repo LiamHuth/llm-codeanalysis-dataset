@@ -1,13 +1,15 @@
 import os
 import json
 import sys
+import numpy as np
 
 def init_config():
-    global config_data, formatted_file_path, prompt_format_path, source_directory_input, source_directory_output, vulnerabilities
+    global config_data, formatted_training_file_path, formatted_validation_file_path, prompt_format_path, source_directory_input, source_directory_output, vulnerabilities
 
     with open("./data/config.json", 'r') as config:
         config_data = json.load(config)
-        formatted_file_path = config_data["formatted_file_path"]
+        formatted_training_file_path = config_data["formatted_training_file_path"]
+        formatted_validation_file_path = config_data["formatted_validation_file_path"]
         prompt_format_path = config_data["prompt_format_path"]
         source_directory_input = config_data["source_directory_input"]
         source_directory_output = config_data["source_directory_output"]
@@ -46,7 +48,7 @@ def add_line_num(source_code):
     return numbered_code
 
 def init_formatted_file():
-    with open(formatted_file_path, 'w') as file:
+    with open(formatted_training_file_path, 'w') as file:
         pass
 
 def add_content(role, content, data):
@@ -55,14 +57,22 @@ def add_content(role, content, data):
             data["messages"][i]["content"] = content
     return data 
 
-def add_to_formatted_file(data):
-    with open(formatted_file_path, 'a') as formatted_file:
+def add_to_formatted_file(data, path):
+    with open(path, 'a') as formatted_file:
         formatted_file.write(json.dumps(data))
         formatted_file.write('\n')
 
 def format():
     python_files, output_files = init_source_files()
     init_formatted_file()
+
+    file_num = len(python_files)
+    is_validation_list = np.full(file_num, False, dtype=bool)
+    elements_to_change_num = int(file_num * 0.20)
+    indices_to_change = np.random.choice(file_num, elements_to_change_num, replace=False)
+    is_validation_list[indices_to_change] = True
+    is_validation_list.tolist()
+    i = 0
 
     for py_file, out_file in zip(python_files, output_files):
         with open(prompt_format_path, 'r') as prompt_format:
@@ -87,7 +97,13 @@ def format():
         else:
             print(f"No matching pair found for {py_file}")
 
-        add_to_formatted_file(prompt_format_data)
+        if is_validation_list[i]:
+            path = formatted_validation_file_path
+        else:
+            path = formatted_training_file_path
+
+        add_to_formatted_file(prompt_format_data, path)
+        i += 1
 
 def main():
     init_config()
