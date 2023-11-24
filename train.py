@@ -10,7 +10,7 @@ import os
 This script will validate the input dataset, estimate the training cost, and train the model if desired
 
 Usage:
-python3 validate_data.py relative_path_to_dataset.jsonl
+python3 train.py training_data.jsonl validation_data.jsonl
 
 Additional arguments:
 -e      sets the number of epochs
@@ -26,22 +26,26 @@ Model: GPT 3.5 turbo
 # default values (gpt 3.5 turbo)
 num_epochs = 3
 base_cost = 0.008
-data_path = ""
-
+training_path = ""
+validation_path = ""
 
 def parse_args():
-    global base_cost, num_epochs
+    global base_cost, num_epochs, training_path, validation_path
 
     parser = argparse.ArgumentParser()
 
     # Required file path argument
-    parser.add_argument('file_path', type=str, help='Path to the file')
+    parser.add_argument('training_path', type=str, help='Path to the training file')
+    parser.add_argument('validation_path', type=str, help='Path to the validation file')
 
     # Optional arguments
     parser.add_argument('-c', '--cost', type=float, default=None, help='Set the cost of training per 1k tokens')
     parser.add_argument('-e', '--epochs', type=int, default=None, help='Set the number of epochs')
 
     args = parser.parse_args()
+
+    training_path = args.training_path
+    validation_path = args.validation_path
 
     if args.cost is not None:
         if args.cost < 0:
@@ -55,17 +59,16 @@ def parse_args():
         num_epochs = args.epochs
 
     try:
-        with open(args.file_path, 'r', encoding='utf-8') as f:
-            dataset = [json.loads(line) for line in f]
+        with open(args.training_path, 'r', encoding='utf-8') as f:
+            training_data = [json.loads(line) for line in f]
+        with open(args.validation_path, 'r', encoding='utf-8') as f:
+            validation_data = [json.loads(line) for line in f]
     except:
         print("Error: could not load dataset", file=sys.stderr)
         sys.exit(1)
 
 
-    return dataset
-
-    
-
+    return training_data, validation_data
 
 
 # checks formatting of the dataset
@@ -123,26 +126,50 @@ def check_tokens(dataset):
     return token_count
 
 
+def upload_file(file_path):
+    try:
+        res = client.files.create(
+                file=open(file_path, "rb"),
+                purpose="fine-tune"
+              )
+        return res
+    except Exception as e:
+        print(f"Error uploading file: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
 def main():
 
     # ----- validate data -----
 
     # get filename and parameters
-    dataset = parse_args()
+    training_data, validation_data = parse_args()
 
     # validate dataset
-    err = validate_data(dataset)
-    
+    err = validate_data(training_data)
     if err:
         print("\nFound errors in data:")
         for k, v in err.items():
             print(f"{k}: {v}", file=sys.stderr)
         sys.exit(1)
     else:
-        print("\nDataset Validated")
+        print("\nTraining dataset validated")
+
+    err = validate_data(validation_data)
+    if err:
+        print("\nFound errors in data:")
+        for k, v in err.items():
+            print(f"{k}: {v}", file=sys.stderr)
+        sys.exit(1)
+    else:
+        print("Validation dataset validated")
+
+
+    if (len(training_data) < 10):
+        print("WARNING: training dataset must contain at least 10 items, currently has:", len(training_data), file=sys.stderr)
 
     # calculate token count, print message if token count too high for any individual datapoint
-    token_count = check_tokens(dataset)
+    token_count = check_tokens(training_data) + check_tokens(validation_data)
 
     # print cost estimate
     print("\n--------------- Cost Estimate ---------------")
@@ -159,32 +186,37 @@ def main():
 
     # ----- train model -----
 
-    # get key
+    # get user specific parameters from environment
     key = os.environ.get('OPENAI_API_KEY', None)
+    org_id = os.environ.get('OPENAI_ORGANIZATION_KEY', None)
+
     if (key is None):
         print("API Key not defined in your environment", file=sys.stderr)
         sys.exit(1)
 
+    params = {'api_key': key}
+
+    if (org_id is not None):
+        params['organization'] = org_id
+    else:
+        print("Note: no organization id associated with this model")
+
     # open connection
-    client = openai.OpenAI(
-        api_key = key
-    )
+    global client
+    client = openai.OpenAI(**params)
 
-    # test
-    t = input("Q: ")
-    chat_completion = client.chat.completions.create(
-    messages=[
-        {
-            "role": "user",
-            "content": t,
-        }
-    ],
-    model="gpt-3.5-turbo",
-    )
+    # upload training and validation files
+    training_file = upload_file(training_path)
+    validation_file = upload_file(validation_path)
 
-    choice = chat_completion.choices[0]
-    print(choice.message.content)
-
+    # create job to tune model
+    tuning_job = client.fine_tuning.jobs.create(
+                  training_file=training_file.id, 
+                  validation_file=validation_file.id,
+                  model="gpt-3.5-turbo"
+                )
+    
+    print(tuning_job)
 
 if __name__ == "__main__":
     main()

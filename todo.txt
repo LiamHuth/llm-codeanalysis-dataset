@@ -1,8 +1,9 @@
 
 
 Scripts:
-- Generate properly formatted training data from source code files and config
-- Pre training script that checks token counts against cap, and estimates training cost 
+- Generate properly formatted training data from source code files and config               DONE
+- Pre training script that checks token counts against cap, and estimates training cost     DONE
+- Training script
 - Post training script that gets training data (loss, etc) from openai
 
 
