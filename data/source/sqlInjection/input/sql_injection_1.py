@@ -1,4 +1,5 @@
 # Reference: https://knowledge-base.secureflag.com/vulnerabilities/sql_injection/sql_injection_python.html
+# Date: N/A
 
 @app.route("/login")
 def login():
@@ -15,7 +16,7 @@ def login():
     # If the query returns any matching record, consider the current user logged in.
     record = cursor.fetchone()
     if record:
-    session['logged_user'] = username
+        session['logged_user'] = username
 
     # disconnect from server
     db.close()
