@@ -1,5 +1,5 @@
-#
-#
+# author: Liam Huth
+# December 2023
 
 def calculate(expression):
     try:
@@ -12,7 +12,7 @@ def main():
     print("Enter 'exit' to quit.")
 
     while True:
-        user_input = input("Enter an expression (e.g., 2 + 2): ")
+        user_input = input("Enter an expression: ")
         
         if user_input.lower() == 'exit':
             break

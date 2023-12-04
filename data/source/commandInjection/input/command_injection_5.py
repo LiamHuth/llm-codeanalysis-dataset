@@ -1,11 +1,11 @@
-#
-#
+# author: Liam Huth
+# December 2023
+
 from django.shortcuts import render
 from django.http import HttpResponse
 import sys
 import io
 
-# simple django code to provide a python interpreter
 def execute_python_code(code):
     backup = sys.stdout
     sys.stdout = io.StringIO()

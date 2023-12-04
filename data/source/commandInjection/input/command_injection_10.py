@@ -1,5 +1,5 @@
-#
-#
+# author: Liam Huth
+# December 2023
 
 import paramiko
 import getpass
@@ -23,7 +23,6 @@ class RemoteServer:
         return output, error
 
 def main():
-    print("SSH Command Executor")
     hostname = input("Enter the hostname: ")
     username = input("Enter your SSH username: ")
     password = getpass.getpass("Enter your SSH password: ")

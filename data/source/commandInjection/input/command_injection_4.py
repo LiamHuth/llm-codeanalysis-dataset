@@ -1,5 +1,5 @@
-#
-#
+# author: Liam Huth
+# December 2023
 
 import os
 import subprocess
@@ -42,7 +42,7 @@ class PyShell:
             print("Command not found:", ' '.join(cmd_args))
 
     def exit_shell(self, args):
-        print("Exiting PyShell...")
+        print("Exiting...")
         sys.exit(0)
 
     def change_directory(self, args):

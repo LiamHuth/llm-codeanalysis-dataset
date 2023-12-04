@@ -1,5 +1,5 @@
-#
-#
+# author: Liam Huth
+# December 2023
 
 from flask import Flask, request, render_template_string, redirect, url_for, session
 from werkzeug.security import generate_password_hash, check_password_hash
