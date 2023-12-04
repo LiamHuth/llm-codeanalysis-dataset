@@ -2,8 +2,9 @@
     "formatted_training_file_path": "./data/formatted/training.jsonl",
     "formatted_validation_file_path": "./data/formatted/validation.jsonl",
     "prompt_format_path": "./data/prompts.json",
-    "source_directory_input": "./data/source/sqlInjection/input",
-    "source_directory_output": "./data/source/sqlInjection/output",
+    "source_directory":  "./data/source/",
+    "source_directory_input": "./data/source/%s/input",
+    "source_directory_output": "./data/source/%s/output",
     "vulnerabilities": {
         "None": 0,
         "SQL Injection": 1,
