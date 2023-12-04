@@ -12,6 +12,11 @@ def get_user_details(username):
     # Constructing SQL query using string formatting with user input
     query = f"SELECT * FROM users WHERE username = '{username}'"
     
+
+
+
+
+    
     # Executing the query
     cursor.execute(query)
     
