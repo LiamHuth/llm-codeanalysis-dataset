@@ -1,24 +1,6 @@
 # Reference: https://github.com/ra002890/blind_sql_injection_dns/blob/main/site/main.py
 # Date: Oct 21, 2022
 
-@app.middleware("http")
-async def show_cookie(request: Request, call_next):
-    tracking_id = base64_decode_str(request.cookies.get("TrackingId")) if request.cookies.get("TrackingId") else None
-    print(tracking_id)
-    response = await call_next(request)
-    return response
-
-@app.get("/", response_class=HTMLResponse)
-async def home(request: Request):
-    tracking_id = base64_decode_str(request.cookies.get("TrackingId")) if request.cookies.get("TrackingId") else None
-    
-    _response = templates.TemplateResponse("home.html", {"request": request})
-    if not tracking_id:
-        _response.set_cookie(key='TrackingId', value=base64_encode_str(str(uuid4())))
-    else:
-        _response = try_direct_login(tracking_id, request=request)
-    return _response
-
 @app.post("/login", response_class=HTMLResponse)
 def login(request: Request, uname: str = Form(), psw: str = Form()):
     tracking_id = base64_decode_str(request.cookies.get("TrackingId"))
@@ -29,13 +11,6 @@ def login(request: Request, uname: str = Form(), psw: str = Form()):
     else:
         _response = templates.TemplateResponse("home.html", {"request": request, "error": "Invalid user credentials"})
     return _response
-
-def try_direct_login(trackid, request):
-    user = database.try_direct_login(trackid)
-    if user:
-        return templates.TemplateResponse("main.html", {"request": request, "user": user[1]})
-    else:
-        return templates.TemplateResponse("home.html", {"request": request})
 
 def base64_encode_str(str):
     str_bytes = str.encode("ascii")

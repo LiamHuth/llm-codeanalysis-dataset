@@ -37,26 +37,3 @@ def hello():
     </body>
     </html>
     """ %(completeString)
-
-@app.route("/register", methods=['GET', 'POST'])
-def register():
-    if request.method == 'POST':
-        # insert user into database here
-        result = connection.execute("select username from users")
-        return request.form['username']
-        
-    return '''
-    <!DOCTYPE html>
-    <html>
-        <body>
-            Hello! Please register for my awesome, totally secure site
-            <form method="POST">
-                <input name="username" type="text" placeholder="username" pattern=".{3,}">
-                <br>
-                <input name="password" type="password" placeholder="password" pattern=".{3,}">
-                <br>
-                <input type="submit">
-            </form>
-        </body>
-    </html>
-'''

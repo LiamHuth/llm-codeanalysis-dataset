@@ -12,17 +12,6 @@ def detail(request, document_id):
     else:
         return redirect(reverse("login"))
 
-
-def dashboard(request):
-    if request.user.is_authenticated:
-        context = {
-            "document_list": [{"id": document.id, "title": document.title} for document in request.user.document_set.all()]
-        }
-        return render(request, "users/dashboard.html", context)
-    else:
-        return redirect(reverse("login"))
-
-
 def register(request):
     if request.method == "GET":
         return render(
