@@ -8,9 +8,7 @@ app = Flask(__name__)
 
 def getCommand():
     c = request.args.get('command')
-    if (c[:2] == "rm" or c[:2] == "cd"):
-        return ""
-    return c
+    return c[2:1]
 
 @app.route('/run')
 def run_command():
