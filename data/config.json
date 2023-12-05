@@ -1,6 +1,7 @@
 {
     "formatted_training_file_path": "./data/formatted/training.jsonl",
     "formatted_validation_file_path": "./data/formatted/validation.jsonl",
+    "formatted_testing_file_path": "./data/formatted/testing.jsonl",
     "prompt_format_path": "./data/prompts.json",
     "source_directory":  "./data/source/",
     "source_directory_input": "./data/source/%s/input",
@@ -11,5 +12,7 @@
         "XSS": 2,
         "Command Injection": 3,
         "Path Traversal": 4
-    }
+    },
+    "validation_ratio": 0.20,
+    "test_ratio": 0.20
 }
