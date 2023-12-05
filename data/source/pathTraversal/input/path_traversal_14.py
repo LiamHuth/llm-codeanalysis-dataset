@@ -1,5 +1,5 @@
-# Author: Zhiqi Zhou
-# Date: Dec 3, 2023
+#
+#
 
 import os
 from http.server import HTTPServer, BaseHTTPRequestHandler

@@ -1,5 +1,5 @@
-# https://guicommits.com/how-sql-injection-attack-works-with-examples/
-# Date: N/A
+#
+#
 
 DB_FILENAME = os.path.realpath("data/test.db")
 def _get_connection() -> sqlite3.Connection:

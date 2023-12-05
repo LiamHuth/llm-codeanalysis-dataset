@@ -1,5 +1,5 @@
-# Reference: https://github.com/frizb/SQLMapExamples/blob/master/chargen.py, Copyright (c) 2006-2020 sqlmap developers (http://sqlmap.org/)
-# Date: Feb 27, 2020
+#
+#
 
 
 

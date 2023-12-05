@@ -1,5 +1,5 @@
-# Reference: https://github.com/python-security/pyt/blob/master/examples/vulnerable_code/path_traversal.py
-# Apr 14, 2018
+#
+#
 
 import os
 from flask import Flask, request, send_file

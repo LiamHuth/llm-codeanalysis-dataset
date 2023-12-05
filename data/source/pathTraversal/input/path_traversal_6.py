@@ -1,5 +1,5 @@
-# Reference: https://github.com/gotr00t0day/PathTraversal/blob/main/pathhunt.py
-# Date: Jun 7, 2023
+#
+#
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-t', '--target',

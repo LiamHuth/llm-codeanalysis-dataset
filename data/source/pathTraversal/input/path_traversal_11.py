@@ -1,5 +1,5 @@
-# Reference: https://github.com/febinrev/tinyfilemanager-2.4.3-exploit/blob/main/tiny_file_manager_exploit.py
-# Date: Mar 19, 2022
+#
+#
 
 import sys
 url = str(sys.argv[1])

@@ -1,5 +1,5 @@
-# Reference: None
-# Dec 4, 2023
+#
+#
 
 safe_files = {
     "file1": "/safe/directory/file1.txt",

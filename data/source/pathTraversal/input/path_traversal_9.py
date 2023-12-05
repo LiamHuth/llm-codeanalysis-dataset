@@ -1,5 +1,5 @@
-# Reference: https://github.com/akaanirban/pathTraversal/blob/master/pathTraversal_setlr.py
-# Date: Dec 13, 2016
+#
+#
 
 def getFileTypes(fileName):
     if '.png' in fileName or '.jpg' in fileName:

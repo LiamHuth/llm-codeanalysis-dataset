@@ -1,5 +1,5 @@
-# author: Liam Huth
-# December 2023
+#
+#
 
 from flask import Flask, request, render_template_string
 import subprocess

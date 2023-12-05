@@ -1,5 +1,5 @@
-# Reference: https://github.com/AVVasiliev/sql-injections/blob/main/server/models.py
-# Date: Oct 8, 2020
+#
+#
 
 class Database:
     table_name = ""

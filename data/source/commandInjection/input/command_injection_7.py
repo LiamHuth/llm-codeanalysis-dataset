@@ -1,5 +1,5 @@
-# author: Liam Huth
-# December 2023
+#
+#
 
 def calculate(expression):
     try:

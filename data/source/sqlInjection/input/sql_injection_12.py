@@ -1,5 +1,5 @@
-# Reference: https://github.com/guilatrova/flask-sqlinjection-vulnerable/blob/main/src/flask_app.py
-# Date: Sep 29, 2021
+#
+#
 
 from flask import Flask
 from rich import print

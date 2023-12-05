@@ -1,5 +1,5 @@
-# Reference: https://github.com/shuchenliu/pathTraversal/blob/master/pathTraversal.java (converted to Python with ChatGPT)
-# Date: Dec 3, 2023
+#
+#
 
 import requests
 import json

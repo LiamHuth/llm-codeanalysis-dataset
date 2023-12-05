@@ -1,5 +1,5 @@
-# author: Liam Huth, reference: https://davidhamann.de/2020/04/05/exploiting-python-pickle/
-# December 2023
+#
+#
 
 import pickle
 import base64

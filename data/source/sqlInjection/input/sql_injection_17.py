@@ -1,5 +1,5 @@
-# Reference: https://github.com/AkikoOrenji/Hacking-Script-Examples/blob/main/MySql-Injection-Blooean-Blind-Content-Length.py
-# Date: Jan 19, 2021 
+#
+#
 
 def vulnerablefunction_sqli(ip, inj_str):
     for j in range (32, 126):

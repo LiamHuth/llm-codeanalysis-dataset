@@ -1,5 +1,5 @@
-# Reference: https://www.codeease.net/
-# Date: N/A
+#
+#
 
 import mysql.connector
 def search_user(username):

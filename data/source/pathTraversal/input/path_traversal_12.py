@@ -1,5 +1,5 @@
-# Reference: https://github.com/suhasks123/vulnerable-web-server/blob/main/server_node.js (converted to Python with ChatGPT)
-# Date: Dec 3, 2023
+#
+#
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import os

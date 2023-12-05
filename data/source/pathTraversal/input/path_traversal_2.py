@@ -1,5 +1,5 @@
-# Reference: https://github.com/HowProgrammingWorks/PathTraversal/blob/master/JavaScript/1-traversal.js (converted to Python with ChatGPT)
-# Date: Dec 3, 2023
+#
+#
 
 import http.server
 import socketserver

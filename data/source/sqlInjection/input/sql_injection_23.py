@@ -1,5 +1,5 @@
-# Reference: https://github.com/DavidAbderhalden/Example_SQL_Injection/blob/main/Example_SQL_Injection/main.py
-# Date: Nov 23, 2020
+#
+#
 
 import request
 

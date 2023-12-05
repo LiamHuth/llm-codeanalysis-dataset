@@ -1,5 +1,5 @@
-# Reference: https://www.codewithc.com/
-# Date: N/A
+#
+#
 
 import requests
 from bs4 import BeautifulSoup
