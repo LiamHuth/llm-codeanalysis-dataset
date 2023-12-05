@@ -9,12 +9,12 @@ with open ("vectors.txt") as v:
     for line in v:
         browser.open(url)
         browser.select_form(nr = 0)
-        browser[“id”] = line
+        browser["id"] = line
         res = browser.submit()
 
 content = res.read()
-output = open("response/" + str(attack_no) + ".txt", "w")
+output = open("response/" + str(num) + ".txt", "w")
 output.write(content)
 output.close()
-print(attack_no)
-attack_no += 1
+print(num)
+num += 1
