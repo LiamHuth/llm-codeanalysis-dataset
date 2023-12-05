@@ -215,8 +215,6 @@ def main():
                   validation_file=validation_file.id,
                   model="gpt-3.5-turbo"
                 )
-    
-    print(tuning_job)
 
 if __name__ == "__main__":
     main()
