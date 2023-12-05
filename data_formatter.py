@@ -1,6 +1,7 @@
 import os
 import json
 import numpy as np
+import math
 
 def init_config():
     global config_data, formatted_training_file_path, formatted_validation_file_path, formatted_testing_file_path, prompt_format_path, source_directory, temp_source_directory_input, temp_source_directory_output, vulnerabilities, validation_ratio, test_ratio
@@ -59,6 +60,8 @@ def init_formatted_file():
         pass
     with open(formatted_validation_file_path, 'w') as file:
         pass
+    with open(formatted_testing_file_path, 'w') as file:
+        pass
 
 def add_content(role, content, data):
     for i in range(len(data["messages"])):
@@ -88,13 +91,14 @@ def format():
         is_test_list = np.full(file_num, False, dtype=bool)
 
         # Randomly select indices for validation set
-        elements_to_change_num = int(file_num * validation_ratio)
-        indices_to_change = np.random.choice(file_num, elements_to_change_num, replace=False)
+        elements_to_change_for_val = math.ceil(file_num * validation_ratio)
+        indices_to_change = np.random.choice(file_num, elements_to_change_for_val, replace=False)
         is_validation_list[indices_to_change] = True
 
         # Randomly select indices for test set from the remaining data
         remaining_indices = np.where(is_validation_list == False)[0]
-        elements_to_change_for_test = int(file_num * test_ratio)
+        elements_to_change_for_test = math.floor(file_num * test_ratio)
+
         test_indices_to_change = np.random.choice(remaining_indices, elements_to_change_for_test, replace=False)
         is_test_list[test_indices_to_change] = True
 
