@@ -1,5 +1,5 @@
-# Reference: https://github.com/junxian428/SQL_INJECTION_PYTHON_SQLITE_EXAMPLE/blob/main/Login.py
-# Date: Oct 19, 2022
+#
+#
 
 def readSqliteTable():
     try:

@@ -1,5 +1,5 @@
-# https://www.tutorialspoint.com/python_penetration_testing/python_penetration_testing_sqli_web_attack.htm
-# Date: N/A
+#
+#
 
 import mechanize
 

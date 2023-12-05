@@ -1,5 +1,5 @@
-# Author: Zhiqi Zhou
-# Date: N/A
+#
+#
 
 import sqlite3
 

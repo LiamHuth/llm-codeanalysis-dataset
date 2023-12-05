@@ -1,5 +1,5 @@
-# Author: Zhiqi Zhou
-# Date: Dec 3, 2023
+#
+#
 
 from flask import Flask, request
 import os

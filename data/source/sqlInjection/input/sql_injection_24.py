@@ -1,5 +1,5 @@
-# Reference: https://github.com/esoadamo/gymbk-sql-injection-example/blob/main/app.py
-# Date: Apr 25, 2023
+#
+#
 
 database = Database()
 app = Flask(__name__)

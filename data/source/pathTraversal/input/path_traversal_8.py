@@ -1,5 +1,5 @@
-# Reference: https://github.com/guptasimran66/pathTraversal/blob/master/FileSystem.java, (converted to Python with ChatGPT)
-# Date: Dec 3, 2023
+#
+#
 
 class FileSystem:
     class Directory:

@@ -1,5 +1,5 @@
-# Reference: https://github.com/kljensen/example-attackable-web-app/blob/master/app.py
-# Date: Apr 14, 2016
+#
+#
 
 @app.route('/init')
 def init():

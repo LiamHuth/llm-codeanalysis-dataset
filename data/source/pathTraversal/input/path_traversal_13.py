@@ -1,5 +1,5 @@
-# Reference: https://brightsec.com/blog/directory-traversal/ (converted to Python with ChatGPT)
-# Date: Dec 3, 2023
+#
+#
 
 from flask import Flask, request
 

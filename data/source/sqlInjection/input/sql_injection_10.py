@@ -1,5 +1,5 @@
-# Reference: https://www.codiga.io/blog/python-prevent-sql-injection/
-# Date: N/A
+#
+#
 
 import mysql.connector
 

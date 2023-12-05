@@ -1,5 +1,5 @@
-# Reference: https://github.com/sz7mon/PathTraversalDownloader/blob/main/path_traversal_downloader.py
-# Date: May 25, 2023
+#
+#
 
 import requests
 import sys

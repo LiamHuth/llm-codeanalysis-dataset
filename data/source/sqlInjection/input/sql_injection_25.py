@@ -1,5 +1,5 @@
-# Reference: https://github.com/ra002890/blind_sql_injection_dns/blob/main/site/main.py
-# Date: Oct 21, 2022
+#
+#
 
 @app.post("/login", response_class=HTMLResponse)
 def login(request: Request, uname: str = Form(), psw: str = Form()):

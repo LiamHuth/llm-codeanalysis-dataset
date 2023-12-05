@@ -1,5 +1,5 @@
-# Reference: None
-# Dec 4, 2023
+#
+#
 
 file_map = {
     "key1": "/safe/directory/file1.txt",

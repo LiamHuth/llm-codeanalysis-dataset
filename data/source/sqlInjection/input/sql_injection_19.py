@@ -1,5 +1,5 @@
-# Reference: https://github.com/yi-jiayu/sqli-example/blob/master/app.py
-# Date: May 18, 2018
+#
+#
 
 def login(username, password):
     conn = db.connect()

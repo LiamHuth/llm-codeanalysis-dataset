@@ -1,5 +1,5 @@
-# Reference: https://github.com/AkikoOrenji/Hacking-Script-Examples/blob/main/postgres-sqli-rce-udf-revshell.py
-# Date: Jan 19, 2021
+#
+#
 
 def make_request(url, sql):
     r = requests.get( url % sql, verify=False, proxies=proxyDict)

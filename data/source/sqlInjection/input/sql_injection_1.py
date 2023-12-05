@@ -1,5 +1,5 @@
-# Reference: https://knowledge-base.secureflag.com/vulnerabilities/sql_injection/sql_injection_python.html
-# Date: N/A
+#
+#
 
 @app.route("/login")
 def login():

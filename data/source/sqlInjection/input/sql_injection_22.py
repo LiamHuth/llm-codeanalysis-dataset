@@ -1,5 +1,5 @@
-# Reference: https://github.com/Enprogames/SQL-Injection-Example/blob/main/src/users/views.py
-# Date: Mar 25, 2022
+#
+#
 
 def detail(request, document_id):
     if request.user.is_authenticated:

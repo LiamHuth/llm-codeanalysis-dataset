@@ -1,5 +1,5 @@
-# Reference: https://github.com/whitebeardj/Pachev-PathTraversal-POC/blob/main/PachevTraversal.py
-# Date: Apr 7, 2021
+#
+#
 
 class FTPc:
     def __init__(self, connection):

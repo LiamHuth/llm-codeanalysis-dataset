@@ -1,5 +1,5 @@
-# Reference: https://github.com/c-bata/django-unsecure-examples/blob/master/sqlinjection/views.py
-# Date: May 17, 2019
+#
+#
 
 
 from django.http import HttpResponse

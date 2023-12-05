@@ -1,5 +1,5 @@
-# author: Liam Huth
-# December 2023
+#
+#
 
 from jinja2 import Template
 

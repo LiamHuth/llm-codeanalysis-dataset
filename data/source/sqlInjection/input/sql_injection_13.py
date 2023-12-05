@@ -1,5 +1,5 @@
-# Reference: https://github.com/pcewebpython/sql-injection-example/blob/master/main.py
-# Date: May 15, 2018 
+#
+#
 
 import os
 import base64

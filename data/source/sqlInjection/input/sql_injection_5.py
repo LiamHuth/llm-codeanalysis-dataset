@@ -1,5 +1,5 @@
-# Author: Zhiqi Zhou
-# Date: N/A
+#
+#
 
 email = input("Enter your email to check for subscription status: ")
 

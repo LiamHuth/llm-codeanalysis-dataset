@@ -1,5 +1,5 @@
-# author: Liam Huth
-# December 2023
+#
+#
 
 def most_frequent_character(s):
     char_count = {}

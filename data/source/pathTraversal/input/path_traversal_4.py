@@ -1,5 +1,5 @@
-# Reference: https://github.com/claudialorusso/pathtraversal/blob/master/pathtraversal.py
-# Date: Mar 31, 2022
+#
+#
 
 session = requests.session()
 session.proxies = {}

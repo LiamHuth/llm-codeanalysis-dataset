@@ -1,5 +1,5 @@
-# author: Liam Huth
-# December 2023
+#
+#
 
 import paramiko
 import getpass
