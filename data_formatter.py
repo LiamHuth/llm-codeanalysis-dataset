@@ -1,20 +1,23 @@
 import os
 import json
-import sys
 import numpy as np
+import math
 
 def init_config():
-    global config_data, formatted_training_file_path, formatted_validation_file_path, prompt_format_path, source_directory, temp_source_directory_input, temp_source_directory_output, vulnerabilities
+    global config_data, formatted_training_file_path, formatted_validation_file_path, formatted_testing_file_path, prompt_format_path, source_directory, temp_source_directory_input, temp_source_directory_output, vulnerabilities, validation_ratio, test_ratio
 
     with open("./data/config.json", 'r') as config:
         config_data = json.load(config)
         formatted_training_file_path = config_data["formatted_training_file_path"]
         formatted_validation_file_path = config_data["formatted_validation_file_path"]
+        formatted_testing_file_path = config_data["formatted_testing_file_path"]
         prompt_format_path = config_data["prompt_format_path"]
         source_directory = config_data["source_directory"]
         temp_source_directory_input = config_data["source_directory_input"]
         temp_source_directory_output = config_data["source_directory_output"]
         vulnerabilities = config_data["vulnerabilities"]
+        validation_ratio = config_data["validation_ratio"]
+        test_ratio = config_data["test_ratio"]
 
 def init_source_files(vulnerabilityDir: str):
     # Lists to hold the matched file names
@@ -57,6 +60,8 @@ def init_formatted_file():
         pass
     with open(formatted_validation_file_path, 'w') as file:
         pass
+    with open(formatted_testing_file_path, 'w') as file:
+        pass
 
 def add_content(role, content, data):
     for i in range(len(data["messages"])):
@@ -76,13 +81,31 @@ def format():
         full_path = os.path.join(source_directory, vulnerabilityDir)
         if not os.path.isdir(full_path):
             continue
+
         python_files, output_files = init_source_files(vulnerabilityDir)
+
         file_num = len(python_files)
+
+        # Initialize boolean arrays
         is_validation_list = np.full(file_num, False, dtype=bool)
-        elements_to_change_num = int(file_num * 0.20)
-        indices_to_change = np.random.choice(file_num, elements_to_change_num, replace=False)
+        is_test_list = np.full(file_num, False, dtype=bool)
+
+        # Randomly select indices for validation set
+        elements_to_change_for_val = math.ceil(file_num * validation_ratio)
+        indices_to_change = np.random.choice(file_num, elements_to_change_for_val, replace=False)
         is_validation_list[indices_to_change] = True
-        is_validation_list.tolist()
+
+        # Randomly select indices for test set from the remaining data
+        remaining_indices = np.where(is_validation_list == False)[0]
+        elements_to_change_for_test = math.floor(file_num * test_ratio)
+
+        test_indices_to_change = np.random.choice(remaining_indices, elements_to_change_for_test, replace=False)
+        is_test_list[test_indices_to_change] = True
+
+        # Convert to list if needed
+        is_validation_list = is_validation_list.tolist()
+        is_test_list = is_test_list.tolist()
+
         i = 0
 
         for py_file, out_file in zip(python_files, output_files):
@@ -110,6 +133,8 @@ def format():
 
             if is_validation_list[i]:
                 path = formatted_validation_file_path
+            elif is_test_list[i]:
+                path = formatted_testing_file_path
             else:
                 path = formatted_training_file_path
 
