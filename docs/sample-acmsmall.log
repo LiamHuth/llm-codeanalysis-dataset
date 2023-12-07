@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.30)  7 DEC 2023 15:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.30)  7 DEC 2023 15:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -861,37 +861,100 @@ Class acmart Warning: A possible image without description on input line 257.
 
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 257.
-[2.2] [3.3 <./workflow.pdf>]
-Underfull \vbox (badness 7397) has occurred while \output is active []
+[2.2]
+<../plots/1_correct_categorization_of_vulnerability.pdf, id=113, 1282.7925pt x 823.075pt>
+File: ../plots/1_correct_categorization_of_vulnerability.pdf Graphic file (type pdf)
+<use ../plots/1_correct_categorization_of_vulnerability.pdf>
+Package pdftex.def Info: ../plots/1_correct_categorization_of_vulnerability.pdf  used on input line 265.
+(pdftex.def)             Requested size: 397.66156pt x 255.1506pt.
 
- [4.4]
+Overfull \hbox (1.83907pt too wide) in paragraph at lines 265--266
+ [][] 
+ []
+
+
+Class acmart Warning: A possible image without description on input line 267.
+
+<../plots/2_correct_formatting.pdf, id=114, 1282.7925pt x 823.075pt>
+File: ../plots/2_correct_formatting.pdf Graphic file (type pdf)
+<use ../plots/2_correct_formatting.pdf>
+Package pdftex.def Info: ../plots/2_correct_formatting.pdf  used on input line 271.
+(pdftex.def)             Requested size: 397.66156pt x 255.1506pt.
+
+Overfull \hbox (1.83907pt too wide) in paragraph at lines 271--272
+ [][] 
+ []
+
+
+Class acmart Warning: A possible image without description on input line 273.
+
+<../plots/3_correct_vulnerability_and_sink_source_locations.pdf, id=115, 1282.7925pt x 823.075pt>
+File: ../plots/3_correct_vulnerability_and_sink_source_locations.pdf Graphic file (type pdf)
+<use ../plots/3_correct_vulnerability_and_sink_source_locations.pdf>
+Package pdftex.def Info: ../plots/3_correct_vulnerability_and_sink_source_locations.pdf  used on input line 277.
+(pdftex.def)             Requested size: 397.66156pt x 255.1506pt.
+
+Overfull \hbox (1.83907pt too wide) in paragraph at lines 277--278
+ [][] 
+ []
+
+
+Class acmart Warning: A possible image without description on input line 279.
+
+<../plots/4_precision_recall_and_F1_of_models.pdf, id=116, 1282.7925pt x 823.075pt>
+File: ../plots/4_precision_recall_and_F1_of_models.pdf Graphic file (type pdf)
+<use ../plots/4_precision_recall_and_F1_of_models.pdf>
+Package pdftex.def Info: ../plots/4_precision_recall_and_F1_of_models.pdf  used on input line 283.
+(pdftex.def)             Requested size: 397.66156pt x 255.1506pt.
+
+Overfull \hbox (1.83907pt too wide) in paragraph at lines 283--284
+ [][] 
+ []
+
+
+Class acmart Warning: A possible image without description on input line 285.
+
+<../plots/5_success_rate_for_each_vulnerability_type.pdf, id=117, 1282.7925pt x 823.075pt>
+File: ../plots/5_success_rate_for_each_vulnerability_type.pdf Graphic file (type pdf)
+<use ../plots/5_success_rate_for_each_vulnerability_type.pdf>
+Package pdftex.def Info: ../plots/5_success_rate_for_each_vulnerability_type.pdf  used on input line 289.
+(pdftex.def)             Requested size: 397.66156pt x 255.1506pt.
+
+Overfull \hbox (1.83907pt too wide) in paragraph at lines 289--290
+ [][] 
+ []
+
+
+Class acmart Warning: A possible image without description on input line 291.
+
+[3.3 <./workflow.pdf> <../plots/1_correct_categorization_of_vulnerability.pdf>] [4.4 <../plots/2_correct_formatting.pdf> <../plots/3_correct_vulnerability_and_sink_source_locations.pdf>] [5.5 <../plots/4_precision_recall_and_F1_of_models.pdf> <../plots/5_success_rate_for_each_vulnerability_type.pdf>] [6.6]
 
 Class acmart Warning: Some images may lack descriptions.
 
 
-Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 736.
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 765.
 
 (/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [5.5] (./sample-acmsmall.aux)
+) [7.7] (./sample-acmsmall.aux)
 Package rerunfilecheck Info: File `sample-acmsmall.out' has not changed.
 (rerunfilecheck)             Checksum: 50B63F056BBD97656DAB601DFBD65A04;3706.
  ) 
 Here is how much of TeX's memory you used:
- 21122 strings out of 476025
- 344489 string characters out of 5790016
+ 21165 strings out of 476025
+ 346584 string characters out of 5790016
  1868388 words of memory out of 5000000
- 40681 multiletter control sequences out of 15000+600000
+ 40711 multiletter control sequences out of 15000+600000
  655326 words of font info for 316 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  85i,12n,131p,1572b,793s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on sample-acmsmall.pdf (5 pages, 398609 bytes).
+Output written on sample-acmsmall.pdf (7 pages, 801557 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
- 84158 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 247 PDF objects out of 1000 (max. 8388607)
+ 183 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 500000)
+ 84183 words of extra memory for PDF output out of 89155 (max. 10000000)
 

@@ -1,6 +1,11 @@
 # Fdb version 4
-["pdflatex"] 1701987658 "/Users/zhiqizhou/Desktop/416/project/llm-codeanalysis-dataset/docs/sample-acmsmall.tex" "sample-acmsmall.pdf" "sample-acmsmall" 1701987659 0
-  "/Users/zhiqizhou/Desktop/416/project/llm-codeanalysis-dataset/docs/sample-acmsmall.tex" 1701987656 37202 0f2e48ce4087aaf06ee6d53ee2ed3780 ""
+["pdflatex"] 1701988741 "/Users/zhiqizhou/Desktop/416/project/llm-codeanalysis-dataset/docs/sample-acmsmall.tex" "sample-acmsmall.pdf" "sample-acmsmall" 1701988741 0
+  "../plots/1_correct_categorization_of_vulnerability.pdf" 1701988193 76131 998b3fe80ae434e2dffd6a822d182afe ""
+  "../plots/2_correct_formatting.pdf" 1701988342 74209 55eee391a093025548ad6dd8d0a9a30e ""
+  "../plots/3_correct_vulnerability_and_sink_source_locations.pdf" 1701988253 73860 e1e67ba507771e171dfe40d92d18a559 ""
+  "../plots/4_precision_recall_and_F1_of_models.pdf" 1701988394 83393 c1b3f4bc742795bbb7c8a2835576b118 ""
+  "../plots/5_success_rate_for_each_vulnerability_type.pdf" 1701988460 98648 42e630fa17ad988a2d95799cc67b16dc ""
+  "/Users/zhiqizhou/Desktop/416/project/llm-codeanalysis-dataset/docs/sample-acmsmall.tex" 1701988739 38137 9491e7a1226012331d696b5e0a3b8d19 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc" 1490131464 2921 8ca0eb0831f9bc5da080d3697cfe67bf ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc" 1490131464 2933 9ad527ce78d7c5fa0a642dead095f172 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc" 1490131464 2934 a4a9158faed2e9e89c771b4e3b7fc12f ""
@@ -179,9 +184,9 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1698722728 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1698722658 7883457 a4d7d719434226ac84db34df5cd59ea2 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "sample-acmsmall.aux" 1701987658 3524 7ef9ca33c5ce482af737465411d1e0ab "pdflatex"
-  "sample-acmsmall.out" 1701987658 3706 50b63f056bbd97656dab601dfbd65a04 "pdflatex"
-  "sample-acmsmall.tex" 1701987656 37202 0f2e48ce4087aaf06ee6d53ee2ed3780 ""
+  "sample-acmsmall.aux" 1701988741 4189 66729cbf025d27d57954f9b97feb66f4 "pdflatex"
+  "sample-acmsmall.out" 1701988741 3706 50b63f056bbd97656dab601dfbd65a04 "pdflatex"
+  "sample-acmsmall.tex" 1701988739 38137 9491e7a1226012331d696b5e0a3b8d19 ""
   "workflow.pdf" 1701986667 26201 61c654c37ef5334f60f1b2b26e7e1d8a ""
   (generated)
   "sample-acmsmall.aux"
