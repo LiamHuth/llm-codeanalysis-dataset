@@ -1,0 +1,114 @@
+Test Case,Expected,Result
+case 1,"3
+[33]
+[18]","0
+[]
+[18]"
+case 2,"3
+[10]
+[21]","1: 3
+2: [21]
+3: [10]"
+case 3,"3
+[18]
+[37]","0
+[]
+[]"
+case 4,"3
+[24]
+[9]","0: []
+There are no potential vulnerabilities in this code snippet."
+case 5,"0
+[]
+[]","0
+[]
+[13]"
+case 6,"0
+[]
+[]","0
+[]
+[10]"
+case 7,"0
+[]
+[]","0
+[11]
+[12]"
+case 8,"0
+[]
+[]","1: 1
+2: [10]
+3: [19]"
+case 9,"0
+[]
+[]","None - 0
+No potential vulnerabilities were found in the given code snippet."
+case 10,"0
+[]
+[]","0: []
+Line 10: [10]
+Line 10: [10]"
+case 11,"0
+[]
+[]","0
+[]
+[10]"
+case 12,"1
+[13]
+[17]","1: 1
+2: [14]
+3: [17]
+
+This code snippet is susceptible to SQL Injection vulnerability. The vulnerability can be found at line 14 where the variable `comment` is directly concatenated into the SQL query string, making it possible for an attacker to manipulate the query and potentially perform malicious actions on the database. The sink location is at line 17 where the manipulated SQL query is executed."
+case 13,"1
+[18]
+[23]","None
+[]
+[]"
+case 14,"1
+[39,40]
+[5]","1: 0
+2: []
+3: [5, 10, 13, 20, 22, 27, 31, 35]
+
+There doesn't appear to be any specific vulnerabilities present in this code snippet. However, there are several potentially dangerous actions being performed, such as making HTTP requests with user-controlled input and executing SQL queries with user-controlled input. These actions could lead to vulnerabilities if the input is not properly validated or sanitized."
+case 15,"1
+[31]
+[33]","0
+[]
+[]"
+case 16,"1
+[5,6]
+[7,9,10,12]","0
+[]
+[]"
+case 17,"1
+[4]
+[7]","1: 1
+2: [6]
+3: [7]"
+case 18,"1
+[5]
+[9]","0
+[]
+[]"
+case 19,"4
+[5,6,7]
+[12,18,33,37,42,47]","1: `Command Injection` vulnerability at line 40. 
+2: `Path Traversal` vulnerability at line 45. 
+3: `Command Injection` vulnerability at line 46."
+case 20,"4
+[14]
+[15]","0
+[]
+[]"
+case 21,"4
+[30]
+[43]","0: []
+1: []
+2: [32]
+3: [42]"
+case 22,"4
+[15,21]
+[18,23]","0
+[]
+[15]"
