@@ -1,4 +1,4 @@
-# llm-codeanalysis-dataset
+# Dataset for LLM Static Analysis Tuning - Open Source Dataset Development
 
 ## Introduction
 
@@ -60,3 +60,6 @@ Go to `./data/source/${vulneralbility type}/output/`, add `.out` file, where
 and make sure the name format follows the below:
 
 `${type}_${size_of_current_dataset + 1}.out`.
+
+### Contribution List
+Don't forget to add your name, any reference, and date to `./data/README.md` and follow the format.
