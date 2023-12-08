@@ -35,13 +35,10 @@ You can configure the prompts used to tune ChatGPT. Make sure this has to be one
 First, run `python3 data_formatter.py`, this will convert all raw dataset, pairs of source code `.py` and expected output `.out`, into a formatted `.JSONL` required by OpenAI's API.
 
 ### Training
-
+Run `python3 train.py <path-to-training.jsonl> <path-to-validation.jsonl>`. This will validate the input data and give an estimate of the training costs. Once the costs are accepted it will send the job to OpenAI. 
 
 ### Testing
-
-
-### Plotting (Google Sheets)
-
+Run `python3 test.py <path-to-testdata.jsonl> <model-id>`. This will automatically run the test suite throught the API and output to a csv in `/results`.
 
 ## Contribution
 We would thank anyone who would like to contribute to the dataset.

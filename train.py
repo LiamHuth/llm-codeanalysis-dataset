@@ -213,8 +213,14 @@ def main():
     tuning_job = client.fine_tuning.jobs.create(
                   training_file=training_file.id, 
                   validation_file=validation_file.id,
-                  model="gpt-3.5-turbo"
+                  model="gpt-3.5-turbo",
+                  hyperparameters={
+                    "n_epochs": num_epochs
+                    }
                 )
+
+    print("Model ID: ", tuning_job.id)
+    print("Status: ", tuning_job.status)
 
 if __name__ == "__main__":
     main()
