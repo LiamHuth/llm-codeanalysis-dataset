@@ -228,6 +228,8 @@ A dataset that is made publicly available for anyone to use, modify, and distrib
 
 \section{Approach}
 
+\subsection{Overview}
+
 We customize a dataset to optimize ChatGPT-3.5 Turbo-0613 for static analysis tasks, comparing the fine-tuned model's performance against both its original and ChatGPT-4.0 versions.
 
 % Workflow PDF
@@ -237,8 +239,26 @@ We customize a dataset to optimize ChatGPT-3.5 Turbo-0613 for static analysis ta
 are the contributions of this paper.}
 \end{figure}
 
-\section{Evaluation}
+\subsection{Dataset Creation and Division}
+\subsubsection{Dataset Composition}
+Our dataset, focused on critical security vulnerabilities in software, included samples of SQL injection, path traversal, command injection, and clean code to provide a diverse range of scenarios for model training and testing.
+\subsubsection{Training and Testing Split}
+The dataset was divided into training, validation, and testing subsets in a 60:10:30 ratio, facilitating effective model tuning and thorough evaluation, particularly in tracing the source and sink of security vulnerabilities.
 
+\subsection{Model Tuning and Evaluation}
+\subsubsection{Fine-Tuning ChatGPT-3.5 Turbo-0613}
+The fine-tuning process for ChatGPT-3.5 Turbo-0613 focused on enhancing its proficiency in identifying and tracing the source and sink of SQL injection, command injection, and path traversal vulnerabilities within code.
+\subsubsection{Evaluation of Testing Dataset}
+The evaluation involved comparing the performance of the fine-tuned ChatGPT-3.5 Turbo-0613, its original version, and ChatGPT-4.0, particularly in their ability to detect and analyze vulnerabilities in software.
+
+\subsection{Comparative Performance Analysis}
+\subsubsection{Output Analysis}
+This phase involved analyzing the accuracy and effectiveness of the fine-tuned and original versions of ChatGPT-3.5 Turbo-0613, as well as ChatGPT-4.0 and ChatGPT-4.0-1106 Preview, in detecting vulnerabilities, with a focus on their output quality and relevance.
+\subsubsection{Performance Reporting}
+Our performance report detailed the improvements achieved through fine-tuning. The enhancements were measured using precision, recall, and F1 score metrics. The analysis showed significant advancements in the models' capabilities to accurately identify, trace, and report various types of vulnerabilities, their sources, and sinks. The overall findings from the report were highly positive, indicating substantial progress in all evaluated areas.
+
+
+\section{Evaluation}
 The following questions informed our evaluation strategy:\\
 \\
 Q1: How can we quantify the performance of these models on static analysis tasks?\\
