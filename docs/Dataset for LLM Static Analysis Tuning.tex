@@ -241,9 +241,9 @@ are the contributions of this paper.}
 
 \subsection{Dataset Creation and Division}
 \subsubsection{Dataset Composition}
-Our dataset, focused on critical security vulnerabilities in software, included samples of SQL injection, path traversal, command injection, and clean code to provide a diverse range of scenarios for model training and testing.
-\subsubsection{Training and Testing Split}
-The dataset was divided into training, validation, and testing subsets in a 60:10:30 ratio, facilitating effective model tuning and thorough evaluation, particularly in tracing the source and sink of security vulnerabilities.
+Our dataset, targeting critical security vulnerabilities in software, presents a rich and varied collection of samples. It encompasses 25 instances of SQL injection, 15 examples each of path traversal and command injection, and 25 samples of clean code, ensuring a balanced representation. This dataset is uniquely composed, featuring samples both handwritten by the authors of this paper and sourced from the open-source community. The specific ratio and a more detailed breakdown of these two sources of data will be elaborated in later sections. This diverse and well-rounded dataset is key for comprehensive model training and testing, facilitating an in-depth understanding of different types of security threats, as well as scenarios without vulnerabilities.
+\subsubsection{Training, Validation and Testing Cases Splitting Strategy}
+The dataset was methodically divided into training, validation, and testing subsets, adhering to a 60:10:30 ratio. This partitioning is integral for effective model tuning and exhaustive evaluation. It significantly contributes to the model's proficiency, particularly in precisely identifying and analyzing the source and sink of security vulnerabilities, a critical aspect for efficient threat detection and resolution.
 
 \subsection{Model Tuning and Evaluation}
 \subsubsection{Fine-Tuning ChatGPT-3.5 Turbo-0613}
